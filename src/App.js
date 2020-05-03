@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
+        <Navbar  bg="dark" variant="dark" sticky="top">
     <Navbar.Brand href="#home">Algo Visualizer</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="sorting">Sorting</Nav.Link>
