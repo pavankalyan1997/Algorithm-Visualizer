@@ -1,0 +1,41 @@
+.sorting-visualizer{
+    width: 100%;
+    background-color:black;
+}
+#array-container{
+    /* position: relative; */
+    /* left: 180px; */
+    margin-top: 2px;
+    margin-left: 200px;
+    height: 500px;
+    /* padding-left: 30px; */
+    align-items: center;
+    /* width: 1000px; */
+    /* background-color: black;  */
+}
+.array-bar{
+    width: 2px;
+    display: inline-block;
+    margin: 0 1px;
+
+    
+}
+.indButton{
+    width: 200px;
+    padding: 10px;;
+}
+.buttons{
+    position: absolute;
+    border-radius: 5px;
+    width: 200px;
+    height: 400px;
+    background-color:#F7F7F7;
+}
+#properties{
+    /* background-color: blue; */
+    position: absolute;
+    left: 200px;
+    padding: 3px;
+    
+    height: 40px;
+}
