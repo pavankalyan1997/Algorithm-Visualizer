@@ -1,3 +1,5 @@
+This project involves developing a tool which will visualize Data Structures and Algorithms. Important algorithms like Sorting, Graphs, Linked List, Trees etc will be implemented. I have used React Js for developing the tool
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
