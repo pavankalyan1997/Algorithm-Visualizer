@@ -9,6 +9,7 @@ import * as heapSortAlgorithm from '../sortingAlgorithms/heapSortAnimation.js';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
+import {Navbar, Nav, NavItem,Glyphicon} from 'react-bootstrap';
 const SECONDARY_COLOR='blue';
 const PRIMARY_COLOR='turquoise';
 const ANIMATION_SPEED=1;
@@ -177,7 +178,7 @@ export default class SortingVisualizer extends React.Component{
           this.state.animation_speed=100/event.target.value;
       }
       changeArraySize(event){
-          if(event.target.value===null || event.target.value==0){
+          if(event.target.value===null || event.target.value===0){
             this.state.array_size=DEFAULT_BAR_COUNT;
           }else{
             this.state.array_size=event.target.value;
@@ -221,9 +222,9 @@ export default class SortingVisualizer extends React.Component{
       render() {
           const {array}=this.state;
         return (
-            <div className="sort-visualizer">
+            <div id="bodyContainer">
             <div className="buttons">
-
+            
             <Form.Group>
             <Form.Row as={Col}>
             <Form.Label>Size of Array</Form.Label>

@@ -1,7 +1,16 @@
-.sorting-visualizer{
+/* .sorting-visualizer{
     width: 100%;
     background-color:black;
-}
+} */
+body {
+    margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 #array-container{
     /* position: relative; */
     /* left: 180px; */
@@ -25,11 +34,17 @@
     padding: 10px;;
 }
 .buttons{
-    position: absolute;
+    /* position: absolute;
     border-radius: 5px;
     width: 200px;
-    height: 400px;
+    height: 400px; */
     background-color:#F7F7F7;
+
+    position: fixed;
+    width: 200px;
+    bottom: 0;
+    left: 0;
+    top: 60px;
 }
 #properties{
     /* background-color: blue; */
