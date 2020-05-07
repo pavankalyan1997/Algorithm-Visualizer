@@ -16,6 +16,8 @@ class App extends Component {
       <div className="App">
         <Navbar  bg="dark" variant="dark" sticky="top">
     <Navbar.Brand href="sorting">Algo Visualizer</Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
     <Nav className="mr-auto">
       <Nav.Link href="sorting">Sorting</Nav.Link>
       <Nav.Link href="searching">Searching</Nav.Link>
