@@ -4,6 +4,8 @@ import * as sortingAlgorithms from '../sortingAlgorithms/mergeSortAnimarions.js'
 import * as selectionSortAlgorithm from '../sortingAlgorithms/selectionSortAnimation.js';
 import * as insertionSortAlgorithm from '../sortingAlgorithms/insertionSortAnimation.js';
 import * as bubbleSortAlgorithm from '../sortingAlgorithms/bubbleSortAnimation.js';
+import * as quickSortAlgorithm from '../sortingAlgorithms/quickSortAnimation.js';
+import * as heapSortAlgorithm from '../sortingAlgorithms/heapSortAnimation.js';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -73,128 +75,64 @@ export default class SortingVisualizer extends React.Component{
             }
         }
       }
-      
+      animate(animations){
+        const arrayBars=document.getElementsByClassName('array-bar');
+        console.log(animations);
+        for(let i=0;i<animations.length;i++){
+            if(animations[i].type==='changeColor'){
+                const idx=animations[i].idx;
+                const barStyle=arrayBars[idx].style;
+                let color;
+                if(animations[i].color==='SECONDARY'){
+                    color=SECONDARY_COLOR;
+                }else if(animations[i].color==='PRIMARY'){
+                    color=PRIMARY_COLOR;
+                }else if(animations[i].color==='RED'){
+                    color='red';
+                }else if(animations[i].color==='GREEN'){
+                    color='green';
+                }
+                setTimeout(()=>{
+                    barStyle.backgroundColor=color;
+                },i*this.state.animation_speed);
+            }
+            else if(animations[i].type==='swap'){
+                const idx=animations[i].idx;
+                const value=animations[i].value;
+
+                setTimeout(()=>{
+                    arrayBars[idx].style.height=`${value}px`;
+                },i*this.state.animation_speed);
+                
+            }
+        }
+
+        
+      }
 
       heapSort(){
-
+        let animations=heapSortAlgorithm.getheapSortAnimations(this.state.array);
+        this.animate(animations);
+        console.log(animations);
       }
 
       insertionSort(){
         const animations=insertionSortAlgorithm.getInsertionSortAnimation(this.state.array);
-        const arrayBars=document.getElementsByClassName('array-bar');
-        console.log(animations);
-        for(let i=0;i<animations.length;i++){
-            console.log(this.state.stop);
-            
-            if(animations[i].type==='colorChange'){
-                const idx=animations[i].idx;
-                const barStyle=arrayBars[idx].style;
-                let color;
-                if(animations[i].color==='PRIMARY'){
-                    color=PRIMARY_COLOR;
-                }else if(animations[i].color==='SECONDARY'){
-                    color=SECONDARY_COLOR;
-                }else if(animations[i].color==='GREEN'){
-                    color='green';
-                }
-                
-                    setTimeout(()=>{
-                        barStyle.backgroundColor=color;
-                    },i*this.state.animation_speed);
-                
-                
+        this.animate(animations);
         
-            }else if(animations[i].type==='swap'){
-                const idx=animations[i].idx;
-                const value=animations[i].value;
-
-               
-                setTimeout(()=>{
-                    arrayBars[idx].style.height=`${value}px`;
-                },i*this.state.animation_speed);
-            
-            }
-        }
-        for(let i=0;i<arrayBars.length;i++){
-            arrayBars[i].style.backgroundColor=PRIMARY_COLOR;
-        }
       }
       quickSort(){
-
+        const animations=quickSortAlgorithm.getQuickSortAnimations(this.state.array);
+        this.animate(animations);
       }
       bubbleSort(){
-        // const javaScriptSortedArray=this.state.array
-        // .slice()
-        // .sort(function(a,b){return a-b});
-        // const bubbleSortedArray=bubbleSortAlgorithm.getBubbleSortAnimations(this.state.array);
-        
-        // console.log(areArraysEqual(javaScriptSortedArray,bubbleSortedArray));
-
         const animations=bubbleSortAlgorithm.getBubbleSortAnimations(this.state.array);
-        const arrayBars=document.getElementsByClassName('array-bar');
-        console.log(animations);
-        for(let i=0;i<animations.length;i++){
-            if(animations[i].type==='changeColor'){
-                const idx=animations[i].idx;
-                const barStyle=arrayBars[idx].style;
-                let color;
-                if(animations[i].color==='SECONDARY'){
-                    color=SECONDARY_COLOR;
-                }else if(animations[i].color==='PRIMARY'){
-                    color=PRIMARY_COLOR;
-                }else if(animations[i].color==='RED'){
-                    color='red';
-                }else if(animations[i].color==='GREEN'){
-                    color='green';
-                }
-                setTimeout(()=>{
-                    barStyle.backgroundColor=color;
-                },i*this.state.animation_speed);
-            }
-            else if(animations[i].type==='swap'){
-                const idx=animations[i].idx;
-                const value=animations[i].value;
-
-                setTimeout(()=>{
-                    arrayBars[idx].style.height=`${value}px`;
-                },i*this.state.animation_speed);
-                
-            }
-        }
-        
+        this.animate(animations);
       }
 
       selectionSort(){
         const animations=selectionSortAlgorithm.getselectionSortAnimations(this.state.array);
-        const arrayBars=document.getElementsByClassName('array-bar');
-        for(let i=0;i<animations.length;i++){
-            if(animations[i].type==='changeColor'){
-                const idx=animations[i].value;
-                const barStyle=arrayBars[idx].style;
-                let color;
-                if(animations[i].color==='SECONDARY'){
-                    color=SECONDARY_COLOR;
-                }else if(animations[i].color==='PRIMARY'){
-                    color=PRIMARY_COLOR;
-                }else if(animations[i].color==='RED'){
-                    color='red';
-                }else if(animations[i].color==='GREEN'){
-                    color='green';
-                }
-                setTimeout(()=>{
-                    barStyle.backgroundColor=color;
-                },i*this.state.animation_speed);
-            }
-            else if(animations[i].type==='swap'){
-                const idx=animations[i].index;
-                const value=animations[i].value;
-
-                setTimeout(()=>{
-                    arrayBars[idx].style.height=`${value}px`;
-                },i*this.state.animation_speed);
-                
-            }
-        }
+        this.animate(animations);
       }
 
       testSortingAlgorithms(){

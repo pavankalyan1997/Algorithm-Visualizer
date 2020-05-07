@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar  bg="dark" variant="dark" sticky="top">
-    <Navbar.Brand href="#home">Algo Visualizer</Navbar.Brand>
+    <Navbar.Brand href="sorting">Algo Visualizer</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="sorting">Sorting</Nav.Link>
       <Nav.Link href="searching">Searching</Nav.Link>
