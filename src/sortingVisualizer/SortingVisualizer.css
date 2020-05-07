@@ -26,13 +26,11 @@ body {
     width: 2px;
     display: inline-block;
     margin: 0 1px;
-
-    
 }
-.indButton{
+/* .indButton{
     width: 200px;
     padding: 10px;;
-}
+} */
 .buttons{
     /* position: absolute;
     border-radius: 5px;
@@ -41,16 +39,17 @@ body {
     background-color:#F7F7F7;
 
     position: fixed;
-    width: 200px;
+    width: 15%;
     bottom: 0;
     left: 0;
-    top: 60px;
+    top: 10%;
 }
-#properties{
-    /* background-color: blue; */
+/*#properties{
+    background-color: blue;
     position: absolute;
     left: 200px;
     padding: 3px;
     
     height: 40px;
 }
+*/
