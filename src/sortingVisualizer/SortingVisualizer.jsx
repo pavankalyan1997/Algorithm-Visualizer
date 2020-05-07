@@ -9,11 +9,11 @@ import * as heapSortAlgorithm from '../sortingAlgorithms/heapSortAnimation.js';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-import {Navbar, Nav, NavItem,Glyphicon} from 'react-bootstrap';
+import {Navbar, Nav, NavItem,Glyphicon,Row,Container} from 'react-bootstrap';
 const SECONDARY_COLOR='blue';
 const PRIMARY_COLOR='turquoise';
 const ANIMATION_SPEED=1;
-const DEFAULT_BAR_COUNT=280;
+const DEFAULT_BAR_COUNT=250;
 export default class SortingVisualizer extends React.Component{
     constructor(props) {
         super(props);
@@ -223,18 +223,22 @@ export default class SortingVisualizer extends React.Component{
           const {array}=this.state;
         return (
             <div id="bodyContainer">
+
+            
+            <Row>
+                <Col sm={1} md="auto">
             <div className="buttons">
             
             <Form.Group>
             <Form.Row as={Col}>
             <Form.Label>Size of Array</Form.Label>
-            <Form.Control onChange={this.changeArraySize.bind(this)} type="number" max="500" min="1"  placeholder="Array Size" />
+            <Form.Control size="sm" onChange={this.changeArraySize.bind(this)} type="number" max="500" min="1"  placeholder="Array Size" />
             </Form.Row>
             </Form.Group>
 
             <Form.Group>
             <Form.Row as={Col}>
-            <Button variant="outline-primary"
+            <Button size="sm" variant="outline-primary"
             onClick={()=>this.resetArray()}>Generate Array</Button>{' '}
                 
             </Form.Row>
@@ -246,8 +250,8 @@ export default class SortingVisualizer extends React.Component{
             <Form>
             <Form.Group as={Col} controlId="formGridState">
             <Form.Row>
-            <Form.Label>Sorting Algorithm</Form.Label>
-            <Form.Control onChange={this.changeSortAlgorithm.bind(this)} as="select">
+            <Form.Label size="sm">Sorting Algorithm</Form.Label>
+            <Form.Control size="sm" onChange={this.changeSortAlgorithm.bind(this)} as="select">
                 <option>Choose...</option>
                 <option>Insertion Sort</option>
                 <option>Merge Sort</option>
@@ -264,14 +268,14 @@ export default class SortingVisualizer extends React.Component{
             <Form.Group as={Col}>
             <Form.Row>
 
-            <Form.Label>Animation speed</Form.Label>
-            <Form.Control onChange={this.changeAnimationSpeed.bind(this)} type="number" max="100" min="1"  placeholder="Animation Speed" />
+            <Form.Label size="sm">Animation speed</Form.Label>
+            <Form.Control size="sm" onChange={this.changeAnimationSpeed.bind(this)} type="number" max="100" min="1"  placeholder="Animation Speed" />
             </Form.Row>
             </Form.Group>
 
             <Form.Group>
             <Form.Row as={Col}>
-            <Button variant="primary" 
+            <Button size="sm" variant="primary" 
             onClick={()=>this.visualize()}>
             Visualize
             </Button>
@@ -281,10 +285,10 @@ export default class SortingVisualizer extends React.Component{
 
             <Form.Group>
             <Form.Row as={Col}>
-            <Button variant="danger" 
+            {/* <Button variant="danger" 
                 onClick={()=>this.stopExecution()}>
             Stop Execution
-            </Button>
+            </Button> */}
                 
             </Form.Row>
             </Form.Group>
@@ -298,8 +302,10 @@ export default class SortingVisualizer extends React.Component{
                 
 
             </div>
+            </Col>
             
-            <div id="array-container">
+            <Col sm={9} >
+            <div >
                 
                 {array.map((value, idx) => (
                 <div className="array-bar" key={idx} style={{
@@ -312,6 +318,11 @@ export default class SortingVisualizer extends React.Component{
               <br/>
             </div>
 
+            </Col>
+            </Row>
+            
+            
+            
             
 
             

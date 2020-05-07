@@ -14,10 +14,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar  bg="dark" variant="dark" sticky="top">
+        <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
     <Navbar.Brand href="sorting">Algo Visualizer</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
+  <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="sorting">Sorting</Nav.Link>
       <Nav.Link href="searching">Searching</Nav.Link>
@@ -25,7 +25,7 @@ class App extends Component {
       <Nav.Link href="linkedList">Linked List</Nav.Link>
       <Nav.Link href="tree">Tree</Nav.Link>
     </Nav>
-    
+    </Navbar.Collapse>
   </Navbar>
         <React.Fragment>
         <Router>
